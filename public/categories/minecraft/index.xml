@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Minecraft on GregTech</title>
+    <link>http://localhost:1313/categories/minecraft/</link>
+    <description>Recent content in Minecraft on GregTech</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 19 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/minecraft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hosting a Minecraft server with Docker</title>
+      <link>http://localhost:1313/posts/minecrafthosting/</link>
+      <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/minecrafthosting/</guid>
+      <description>&lt;p&gt;Hosting a Minecraft server is relatively easy compared to other services, but running it through Docker makes it so much more easy to use and portable. This is a complete guide on how to run a Minecraft server.&lt;/p&gt;&#xA;&lt;h2 id=&#34;docker&#34;&gt;&#xA;  Docker&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#docker&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;First, we are going to install &lt;a href=&#34;https://www.docker.com/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker&lt;/a&gt;. &lt;em&gt;Do not&lt;/em&gt; install Docker desktop, as it&amp;rsquo;s not really part of the docker open source community and we wouldn&amp;rsquo;t want to deal with it. Here I assume you&amp;rsquo;re using a Linux distribution, though the process should be similar for Windows users. Select your platform on &lt;a href=&#34;https://docs.docker.com/engine/install/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt; page. I use Ubuntu, so I&amp;rsquo;m going to follow the install guide for it.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
