@@ -1,3 +1,4 @@
+
 stages:
   - deploy
 
@@ -9,11 +10,17 @@ variables:
 
 .deploy_common: &deploy_common
   before_script:
+    # Install required packages
     - apt-get update && apt-get install -y wget tar
+    # Download and install Hugo Extended (for Linux ARM64; adjust URL for your architecture)
     - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
     - dpkg -i hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
+    # Build the Hugo site (output goes to "public")
     - hugo --minify
+    # Install the Vercel CLI globally
     - npm install --global vercel
+    # Create a vercel.json file to override the default build command
+    - echo '{ "build": { "command": "echo no build", "outputDirectory": "public" } }' > vercel.json
   artifacts:
     paths:
       - public
