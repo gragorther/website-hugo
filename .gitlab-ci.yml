@@ -5,13 +5,26 @@ default:
   image: node:20-bullseye
 
 variables:
-  # Set the Hugo version you want to use.
+  # Specify the Hugo version you want to use.
   HUGO_VERSION: "0.143.1"
+
+# A common set of steps to install dependencies, download & install Hugo, and build the site.
+.deploy_common: &deploy_common
+  script:
+    - apt-get update && apt-get install -y wget tar
+    - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
+    - dpkg -i hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
+    - hugo --minify
+    - npm install --global vercel
+  artifacts:
+    paths:
+      - public
 
 deploy_preview:
   stage: deploy
   except:
     - main
+  <<: *deploy_common
   script:
     - apt-get update && apt-get install -y wget tar
     - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
@@ -19,14 +32,12 @@ deploy_preview:
     - hugo --minify
     - npm install --global vercel
     - vercel deploy public --token=$VERCEL_TOKEN
-  artifacts:
-    paths:
-      - public
 
 deploy_production:
   stage: deploy
   only:
     - main
+  <<: *deploy_common
   script:
     - apt-get update && apt-get install -y wget tar
     - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
@@ -34,6 +45,3 @@ deploy_production:
     - hugo --minify
     - npm install --global vercel
     - vercel deploy public --prod --token=$VERCEL_TOKEN
-  artifacts:
-    paths:
-      - public
