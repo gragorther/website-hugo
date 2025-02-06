@@ -1,42 +1,22 @@
-
-stages:
-  - deploy
-
 default:
-  image: node:20-bullseye
-
-variables:
-  HUGO_VERSION: "0.143.1"
-
-.deploy_common: &deploy_common
-  before_script:
-    # Install required packages
-    - apt-get update && apt-get install -y wget tar
-    # Download and install Hugo Extended (for Linux ARM64; adjust URL for your architecture)
-    - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
-    - dpkg -i hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
-    # Build the Hugo site (output goes to "public")
-    - hugo --minify
-    # Install the Vercel CLI globally
-    - npm install --global vercel
-    # Create a vercel.json file to override the default build command
-    - echo '{ "build": { "command": "echo no build", "outputDirectory": "public" } }' > vercel.json
-  artifacts:
-    paths:
-      - public
+  image: node:22
 
 deploy_preview:
   stage: deploy
   except:
     - main
-  <<: *deploy_common
   script:
-    - vercel deploy public --token=$VERCEL_TOKEN
+    - npm install --global vercel
+    - vercel pull --yes --environment=preview --token=$VERCEL_TOKEN
+    - vercel build --token=$VERCEL_TOKEN
+    - vercel deploy --prebuilt  --token=$VERCEL_TOKEN
 
 deploy_production:
   stage: deploy
   only:
     - main
-  <<: *deploy_common
   script:
-    - vercel deploy public --prod --token=$VERCEL_TOKEN
+    - npm install --global vercel
+    - vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+    - vercel build --prod --token=$VERCEL_TOKEN
+    - vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
