@@ -13,18 +13,12 @@ deploy_preview:
   except:
     - main
   script:
-    # Update package lists and install wget (dpkg is already available on Debian)
-    - apt-get update && apt-get install -y wget
-    # Download the Hugo Extended deb package (for ARM64; change filename if needed)
+    - apt-get update && apt-get install -y wget tar
     - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
-    # Install Hugo from the deb package
     - dpkg -i hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
-    # Build your Hugo website (default output is the "public" folder)
     - hugo --minify
-    # Install the Vercel CLI
     - npm install --global vercel
-    # Deploy using Vercel CLI (prebuilt deployment for preview)
-    - vercel deploy --prebuilt --token=$VERCEL_TOKEN
+    - vercel deploy public --token=$VERCEL_TOKEN
   artifacts:
     paths:
       - public
@@ -34,12 +28,12 @@ deploy_production:
   only:
     - main
   script:
-    - apt-get update && apt-get install -y wget
+    - apt-get update && apt-get install -y wget tar
     - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
     - dpkg -i hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
     - hugo --minify
     - npm install --global vercel
-    - vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+    - vercel deploy public --prod --token=$VERCEL_TOKEN
   artifacts:
     paths:
       - public
