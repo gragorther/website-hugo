@@ -1,4 +1,4 @@
-baseurl = "http://blog.gregtech.eu"
+baseURL = "http://blog.gregtech.eu"
 title = "GregTech"
 theme = "hugo-coder"
 languagecode = "en"
