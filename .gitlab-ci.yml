@@ -2,13 +2,10 @@ stages:
   - deploy
 
 default:
-  image: node:20-alpine
+  image: node:20-bullseye
 
 variables:
   # Set the Hugo version you want to use.
-  # For x86_64, you might use:
-  # HUGO_VERSION: "0.111.3"
-  # and adjust the URL to use "Linux-64bit.tar.gz" if needed.
   HUGO_VERSION: "0.143.1"
 
 deploy_preview:
@@ -16,18 +13,17 @@ deploy_preview:
   except:
     - main
   script:
-    # Install required packages for downloading and extracting Hugo.
-    - apk add --no-cache wget tar
-    # Download Hugo Extended for Linux ARM64.
-    # (If you're on x86_64, update the URL accordingly, e.g., "hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz")
-    - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-ARM64.tar.gz
-    - tar -xzf hugo_extended_${HUGO_VERSION}_Linux-ARM64.tar.gz
-    - mv hugo /usr/local/bin/
-    # Build the Hugo website; output will go into the "public" folder.
-    - /usr/local/bin/hugo --minify
-    # Install Vercel CLI
+    # Update package lists and install wget (dpkg is already available on Debian)
+    - apt-get update && apt-get install -y wget
+    # Download the Hugo Extended deb package (for ARM64; change filename if needed)
+    - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
+    # Install Hugo from the deb package
+    - dpkg -i hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
+    # Build your Hugo website (default output is the "public" folder)
+    - hugo --minify
+    # Install the Vercel CLI
     - npm install --global vercel
-    # Deploy using Vercel CLI (prebuilt deployment)
+    # Deploy using Vercel CLI (prebuilt deployment for preview)
     - vercel deploy --prebuilt --token=$VERCEL_TOKEN
   artifacts:
     paths:
@@ -38,11 +34,10 @@ deploy_production:
   only:
     - main
   script:
-    - apk add --no-cache wget tar
-    - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-ARM64.tar.gz
-    - tar -xzf hugo_extended_${HUGO_VERSION}_Linux-ARM64.tar.gz
-    - mv hugo /usr/local/bin/
-    - /usr/local/bin/hugo --minify
+    - apt-get update && apt-get install -y wget
+    - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
+    - dpkg -i hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
+    - hugo --minify
     - npm install --global vercel
     - vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
   artifacts:
