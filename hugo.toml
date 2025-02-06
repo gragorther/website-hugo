@@ -20,10 +20,10 @@ style = "github-dark"
   info = "Web Developer, FOSS Enthusiast and Linux Nerd"
   description = "My personal website"
   keywords = "blog,developer,personal,webdev"
-  avatarurl = "images/avatar.jpg"
+  avatarurl = "/static/kitty.png"
   #gravatar = "john.doe@example.com"
 
-  faviconSVG = "images/icon.png"
+  faviconSVG = "/static/kitty.png"
   #favicon_32 = "/img/favicon-32x32.png"
   #favicon_16 = "/img/favicon-16x16.png"
 
