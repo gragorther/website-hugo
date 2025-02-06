@@ -5,18 +5,14 @@ default:
   image: node:20-bullseye
 
 variables:
-  # Set the Hugo version you want to use.
   HUGO_VERSION: "0.143.1"
 
 .deploy_common: &deploy_common
-  script:
+  before_script:
     - apt-get update && apt-get install -y wget tar
-    # Download and install Hugo Extended via the deb package (for ARM64; change if needed)
     - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
     - dpkg -i hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
     - hugo --minify
-    # Create a vercel.json file to override the default build command.
-    - echo '{ "build": { "command": "echo no build", "outputDirectory": "public" } }' > vercel.json
     - npm install --global vercel
   artifacts:
     paths:
@@ -28,12 +24,6 @@ deploy_preview:
     - main
   <<: *deploy_common
   script:
-    - apt-get update && apt-get install -y wget tar
-    - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
-    - dpkg -i hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
-    - hugo --minify
-    - echo '{ "build": { "command": "echo no build", "outputDirectory": "public" } }' > vercel.json
-    - npm install --global vercel
     - vercel deploy public --token=$VERCEL_TOKEN
 
 deploy_production:
@@ -42,10 +32,4 @@ deploy_production:
     - main
   <<: *deploy_common
   script:
-    - apt-get update && apt-get install -y wget tar
-    - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
-    - dpkg -i hugo_extended_${HUGO_VERSION}_Linux-ARM64.deb
-    - hugo --minify
-    - echo '{ "build": { "command": "echo no build", "outputDirectory": "public" } }' > vercel.json
-    - npm install --global vercel
     - vercel deploy public --prod --token=$VERCEL_TOKEN
