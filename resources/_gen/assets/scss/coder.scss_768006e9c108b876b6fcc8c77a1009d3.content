@@ -10670,8 +10670,7 @@ figure {
       .content article footer .see-also h3 {
         margin: 3.2rem 0; }
   .content article p {
-    text-align: justify;
-    text-justify: auto;
+    text-align: left;
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
