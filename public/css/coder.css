@@ -10706,7 +10706,7 @@ figure {
 .avatar img {
   width: 20rem;
   height: auto;
-  border-radius: 50%; }
+  border-radius: 20%; }
   @media only screen and (max-width: 768px) {
     .avatar img {
       width: 17rem; } }
