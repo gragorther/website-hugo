@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Hosting a Minecraft server with Docker · GregTech
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Gregor Podjed">
+<meta name="description" content="A guide on how to self host a Minecraft server with Docker.">
+<meta name="keywords" content="blog,developer,personal,webdev">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hosting a Minecraft server with Docker">
+  <meta name="twitter:description" content="A guide on how to self host a Minecraft server with Docker.">
+
+<meta property="og:url" content="http://localhost:1313/posts/minecrafthosting/">
+  <meta property="og:site_name" content="GregTech">
+  <meta property="og:title" content="Hosting a Minecraft server with Docker">
+  <meta property="og:description" content="A guide on how to self host a Minecraft server with Docker.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-19T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/minecrafthosting/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/avatar.jpg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      GregTech
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/minecrafthosting/">
+              Hosting a Minecraft server with Docker
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-01-19T00:00:00Z">
+                January 19, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              5-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/minecraft/">Minecraft</a>
+      <span class="separator">•</span>
+    <a href="/categories/docker/">Docker</a>
+      <span class="separator">•</span>
+    <a href="/categories/tech/">Tech</a></div>
+
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>Hosting a Minecraft server is relatively easy compared to other services, but running it through Docker makes it so much more easy to use and portable. This is a complete guide on how to run a Minecraft server.</p>
+<h2 id="docker">
+  Docker
+  <a class="heading-link" href="#docker">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>First, we are going to install <a href="https://www.docker.com/"  class="external-link" target="_blank" rel="noopener">Docker</a>. <em>Do not</em> install Docker desktop, as it&rsquo;s not really part of the docker open source community and we wouldn&rsquo;t want to deal with it. Here I assume you&rsquo;re using a Linux distribution, though the process should be similar for Windows users. Select your platform on <a href="https://docs.docker.com/engine/install/"  class="external-link" target="_blank" rel="noopener">this</a> page. I use Ubuntu, so I&rsquo;m going to follow the install guide for it.</p>
+<p>After you have added Docker&rsquo;s apt repository and installed its packages, make sure to allow Docker to run as a non-root user for additional security and so that we don&rsquo;t have to enter the sudo password every time we want to interact with Minecraft. You can do that by following <a href="https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user"  class="external-link" target="_blank" rel="noopener">this</a> guide in the Docker documentation. It is also generally a good idea to enable Docker to start on boot so that you don&rsquo;t have to start it yourself. Ubuntu and Debian already do this by default, but if you want to get the same behaviour on other distributions check <a href="https://docs.docker.com/engine/install/linux-postinstall/#configure-docker-to-start-on-boot-with-systemd"  class="external-link" target="_blank" rel="noopener">the docker documentation</a>.</p>
+<p>Now we have Docker fully set up for our needs, time to move on to the next part.</p>
+<h2 id="networking">
+  Networking
+  <a class="heading-link" href="#networking">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Because you probably want to be able to access your Minecraft server from outside your network, you should forward for the port 25565, which is the default port for Minecraft. You can skip this part if you host your Minecraft server on a network where all the ports are opened (commonly seen in VPSs and other servers in datacenters, rarely in home connections)</p>
+<p>This step is hugely different for different ISPs and routers, so I can only give a general guide here. The process also depends on how your network is configured, for example for my Internet connection there is the ISP&rsquo;s firewall (the thing in which we open the ports) and then it passes through my D-Link router. I need to open the port 25565 on both of them for anything to work.</p>
+<p>You can access your router&rsquo;s admin panel, in which you can open ports, by finding the router&rsquo;s IP, usually it is <code>192.168.0.1</code>. On Linux you can find it by typing <code>ip r</code> into a terminal. The IP will be displayed like this: <code>default via 192.168.0.1</code>. On Windows you can open cmd.exe and type in <code>ipconfig /all</code>. The router&rsquo;s IP will be displayed next to <code>Default Gateway</code>. Once you have it you can open a web browser, go to the router&rsquo;s IP and navigate to the login page. There you can enter the admin password. If you don&rsquo;t know what it is, you can usually find the default password online on websites such as <a href="https://router-network.com/default-router-passwords-list"  class="external-link" target="_blank" rel="noopener">this</a> one.</p>
+<p>Another thing you have to do to allow people to connect to your server is that you have to either give them your public IP address (can be found on a website like <a href="https://whatismyipaddress.com/"  class="external-link" target="_blank" rel="noopener">whatismyipaddress.com</a>), or if you own a domain you can deploy an A record to the IP address you have Minecraft on. These might not work if you&rsquo;re behind a NAT, in which case you can use a tunnel like <a href="https://playit.gg/"  class="external-link" target="_blank" rel="noopener">playit.gg</a>.</p>
+<p>For accessing Minecraft via a local network, you have to find your private IP address. On Linux you can do that by typing <code>ip a</code> into your terminal, and it will output the local IP address in the block that is <em>not</em> <code>lo</code>, because that&rsquo;s the loopback address. And finally, you can access your Minecraft server locally (on the computer running it) by simply typing <code>localhost</code> into the server address field in the game.</p>
+<h2 id="starting-the-server">
+  Starting the Server
+  <a class="heading-link" href="#starting-the-server">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>I recommend you put each service you host into its own directory, such as <code>~/mc</code> for Minecraft, so that you can have a separate docker compose file for each service. Here is my docker-compose.yml:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">services</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">mc</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">image</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">itzg/minecraft-server</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">environment</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span><span style="color:#7ee787">EULA</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">&#34;true&#34;</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">ports</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span>- <span style="color:#a5d6ff">&#34;25565:25565&#34;</span><span style="color:#6e7681"> </span><span style="color:#8b949e;font-style:italic">#forward this port on your router</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">volumes</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span>- <span style="color:#a5d6ff">./data:/data</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">stdin_open</span>:<span style="color:#6e7681"> </span><span style="color:#79c0ff">true</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">tty</span>:<span style="color:#6e7681"> </span><span style="color:#79c0ff">true</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">restart</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">unless-stopped</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">volumes</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">data</span>:<span style="color:#6e7681"> </span>{}<span style="color:#6e7681">
+</span></span></span></code></pre></div><p>To run it, you can simply use the command <code>docker compose up -d</code> (the -d flag makes it run as a background service) while inside the directory you put docker-compose.yml in. It will automatically download all the required files for thes server and start it. To check the logs you can run <code>docker compose logs -f</code>.</p>
+<h2 id="server-administration">
+  Server Administration
+  <a class="heading-link" href="#server-administration">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>You might need to log into the admin console sometimes, for example if you&rsquo;d like to whitelist someone buy you don&rsquo;t want to start Minecraft. What you can do is use rcon-cli, a tool that comes with the minecraft docker container that allows you to do just that - log into the server console. To run it, go to the folder you have the docker compose file in and use the command <code>docker compose exec -i mc rcon-cli</code> (mc is the service&rsquo;s name).</p>
+<p>Minecraft&rsquo;s <code>server.properties</code> file can be found in the data folder. In the file you can configure the server, such as the resource packs, the game mode or the OP privilege level.</p>
+<p>I highly recommend upgrading the docker container from time to time to get the latest security patches and Minecraft versions. You can upgrade the host machine (Ubuntu in my case) by running <code>sudo apt update &amp;&amp; sudo apt dist-upgrade</code> or your distribution&rsquo;s equivalent. As for Minecraft you can go to the directory you have it in and run <code>docker compose pull &amp;&amp; docker compose up -d</code></p>
+<h2 id="final-thoughts">
+  Final Thoughts
+  <a class="heading-link" href="#final-thoughts">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Overall, I think docker and docker compose make running and admining a Minecraft server a lot easier, and it allows you to very easily move your server from one device to another without having to deal with the OS running on it.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2025
+     Gregor Podjed 
+    ·
+    
+      Licensed under CC BY-SA 4.0
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

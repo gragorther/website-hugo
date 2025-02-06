@@ -1,0 +1,75 @@
+baseurl = "http://blog.gregtech.eu"
+title = "GregTech"
+theme = "hugo-coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+
+[pagination]
+pagerSize = 20
+
+[services]
+[services.disqus]
+shortname = ""
+
+[markup.highlight]
+style = "github-dark"
+
+[params]
+  author = "Gregor Podjed"
+  info = "Web Developer, FOSS Enthusiast and Linux Nerd"
+  description = "My personal website"
+  keywords = "blog,developer,personal,webdev"
+  avatarurl = "images/avatar.jpg"
+  #gravatar = "john.doe@example.com"
+
+  faviconSVG = "images/avatar.jpg"
+  #favicon_32 = "/img/favicon-32x32.png"
+  #favicon_16 = "/img/favicon-16x16.png"
+
+  since = 2024
+
+  enableTwemoji = true
+
+  colorScheme = "auto"
+  hidecolorschemetoggle = false
+  license="CC BY-SA 4.0"
+
+  # customCSS = ["css/custom.css"]
+  # customSCSS = ["scss/custom.scss"]
+  # customJS = ["js/custom.js"]
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+# Social links
+[[params.social]]
+  name = "Gitlab"
+  icon = "fa-brands fa-gitlab fa-2x"
+  weight = 2
+  url = "https://git.gregtech.eu/root"
+
+[[params.social]]
+  name = "Github"
+  icon = "fa-brands fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/gragorther"
+
+#[[params.social]]
+#  name = "Twitter"
+#  icon = "fa-brands fa-x-twitter fa-2x"
+#  weight = 3
+#  url = "https://twitter.com/johndoe/"
+
+# Menu links
+[[menu.main]]
+  name = "Blog"
+  weight = 1
+  url  = "posts/"
+[[menu.main]]
+  name = "About"
+  weight = 2
+  url = "about/"
