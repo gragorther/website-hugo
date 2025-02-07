@@ -13,7 +13,7 @@ Hall of fame
 Other cool websites
 ----------------  
 - [Tsugu](https://tsugu.xyz)
-A website of a guy I know online. He writes about tech.
+A website of a guy I know online. He mostly writes about tech.
 - [Alan Pope's Blog](https://popey.com/blog/)
 The blog of a prolific member of the Ubuntu community. He used to be the spokesperson for Canonical, convincing devs to publish apps on [snap](https://snapcraft.io/).
 - [Landchad](https://landchad.net/)
