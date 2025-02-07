@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Personal on GregTech</title>
+    <link>http://localhost:1313/categories/personal/</link>
+    <description>Recent content in Personal on GregTech</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 07 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/personal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chat Control, the Privacy Nightmare That Keeps Coming Back</title>
+      <link>http://localhost:1313/posts/halloffame/</link>
+      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/halloffame/</guid>
+      <description>&lt;h1 id=&#34;hall-of-fame&#34;&gt;&#xA;  Hall of fame&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#hall-of-fame&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Here is a list of some stuff I find interesting.&lt;/p&gt;&#xA;&lt;h2 id=&#34;development-software&#34;&gt;&#xA;  Development software&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#development-software&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h2 id=&#34;svelte&#34;&gt;&#xA;  Svelte&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#svelte&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Svelte is a really simple to use web development framework, and they recently released a pretty good update, Svelte 5 (though I might not be the best person to hold such an opinion because I&amp;rsquo;m kind of a noob at web development). For example this site is &lt;a href=&#34;https://github.com/gragorther/website-2.0&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;written in svelte&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
