@@ -1,3 +1,4 @@
+/* Global box-sizing reset */
 *,
 *:after,
 *:before {
@@ -37,10 +38,24 @@ a {
   &:hover {
     text-decoration: underline;
   }
+  
+  /* Remove tap highlight and background on mobile devices */
+  &:active,
+  &:focus {
+    outline: none;
+    background-color: transparent !important;
+  }
+}
+
+/* Apply tap highlight removal specifically for social links */
+.social-links a {
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent !important;
 }
 
 p {
   margin: 2rem 0 2rem 0;
+  
   @media only screen and (max-width: 768px) {
     margin: 1.5rem 0 1.5rem 0;
   }
@@ -142,7 +157,6 @@ strong {
 }
 
 .highlight {
-
   div,
   pre {
     margin: 2rem 0 2rem;
@@ -178,6 +192,7 @@ code {
   padding: 0.3rem 0.6rem;
   background-color: $darker-alt-bg-color;
   color: $fg-color;
+
   @media only screen and (max-width: 768px) {
     font-size: 1.5rem;
   }
@@ -250,7 +265,6 @@ figure {
 .wrapper {
   display: flex;
   flex-direction: column;
-
   min-height: 100vh;
   width: 100%;
 }
