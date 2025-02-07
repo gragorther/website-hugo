@@ -1,8 +1,8 @@
 {{ with .Site.Params.social }}
-<ul>
+<ul class="social-links">
   {{ range sort . "weight" }}
     <li>
-      <a href="{{ .url | safeURL }}" aria-label="{{ .name }}"{{ if .rel }} rel="{{ .rel }}"{{ end }}{{ if .target }} target="{{ .target }}"{{ end }}>
+      <a href="{{ .url | safeURL }}"  aria-label="{{ .name }}"{{ if .rel }} rel="{{ .rel }}"{{ end }}{{ if .target }} target="{{ .target }}"{{ end }}>
         {{ if .icon }}
           <i class="{{ .icon }}" aria-hidden="true"></i>
         {{ else }}
