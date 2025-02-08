@@ -3,6 +3,7 @@ title = "GregTech"
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
+enableRobotsTXT = true
 
 
 [pagination]
