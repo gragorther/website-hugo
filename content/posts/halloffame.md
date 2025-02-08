@@ -6,10 +6,7 @@ categories:
   - personal
 ---
 
-Hall of fame
-============
-
-Other cool websites
+Cool websites
 ----------------  
 - [Tsugu](https://tsugu.xyz)
 A website of a guy I know online. He mostly writes about tech.
