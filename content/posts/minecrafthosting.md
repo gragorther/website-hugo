@@ -1,6 +1,5 @@
 ---
 title: Hosting a Minecraft server with Docker
-description: A guide on how to self host a Minecraft server with Docker.
 date: "2025-01-19"
 categories:
   - minecraft

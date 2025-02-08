@@ -1,6 +1,5 @@
 ---
 title: Hall of Fame
-description: A list of stuff I find interesting
 date: "2025-02-07"
 categories:
   - videogames
