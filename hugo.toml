@@ -17,7 +17,7 @@ style = "github-dark"
 
 [params]
   author = "Gregor Podjed"
-  info = "Web Developer, FOSS Enthusiast and Linux Nerd"
+  info = "Web Developer, FOSS Enthusiast, SysAdmin and Linux Nerd"
   description = "My personal website"
   keywords = "blog,developer,personal,webdev"
   avatarurl = "/static/kitty.png"
