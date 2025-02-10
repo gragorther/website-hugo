@@ -1,16 +1,12 @@
 ---
 title: Hall of Fame
-description: A list of stuff I find interesting
 date: "2025-02-07"
 categories:
   - videogames
   - personal
 ---
 
-Hall of fame
-============
-
-Other cool websites
+Cool websites
 ----------------  
 - [Tsugu](https://tsugu.xyz)
 A website of a guy I know online. He mostly writes about tech.

@@ -1,6 +1,5 @@
 ---
 title: Chat Control, the Privacy Nightmare That Keeps Coming Back
-description: The EU's plan to invade your privacy and how to stop it
 date: "2024-07-05"
 categories:
   - privacy

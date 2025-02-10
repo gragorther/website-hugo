@@ -1,6 +1,5 @@
 ---
 title: Immutable Linux Distributions
-description: Comparing immutable Linux distributions
 date: "2024-08-05"
 categories:
   - linux
