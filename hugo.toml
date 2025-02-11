@@ -58,6 +58,13 @@ style = "github-dark"
   icon = "fa-brands fa-github fa-2x"
   weight = 1
   url = "https://github.com/gragorther"
+  [[params.social]]
+name = "RSS"
+icon = "fa-solid fa-rss fa-2x"
+weight = 3
+url = "/index.xml"
+rel = "alternate"
+type = "application/rss+xml"
 
 #[[params.social]]
 #  name = "Twitter"
