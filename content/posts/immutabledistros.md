@@ -2,8 +2,10 @@
 title: Immutable Linux Distributions
 date: "2024-08-05"
 categories:
-  - linux
   - tech
+tags:
+  - linux
+  - distros
 ---
 
 # What are immutable distros?

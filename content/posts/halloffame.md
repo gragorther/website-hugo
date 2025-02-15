@@ -2,8 +2,11 @@
 title: Hall of Fame
 date: "2025-02-07"
 categories:
-  - videogames
   - personal
+tags:
+  - videogames
+  - websites
+  - security
 ---
 
 # Cool websites
