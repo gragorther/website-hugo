@@ -48,17 +48,11 @@ style = "github-dark"
 
 # Social links
 [[params.social]]
-  name = "Gitlab"
-  icon = "fa-brands fa-gitlab fa-2x"
-  weight = 2
-  url = "https://git.gregtech.eu/root"
-
-[[params.social]]
   name = "Github"
   icon = "fa-brands fa-github fa-2x"
   weight = 1
   url = "https://github.com/gragorther"
-  [[params.social]]
+[[params.social]]
 name = "RSS"
 icon = "fa-solid fa-rss fa-2x"
 weight = 3
