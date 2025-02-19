@@ -11,11 +11,11 @@ tags:
 
 I am a 13-year-old student from Slovenia. I care about privacy and my future as an EU citizen, and currently the future is looking bleak. Wars, even more wars, homelessness, late stage capitalism and privacy nightmares.
 
-# What is chat control?
+## What is chat control?
 
 Chat control is a method that the European Commission has proposed for monitoring online communication. This is the third time they have attempted to implement it. It involves requiring technology companies to scan all chat messages and report them. While it has not yet been implemented, there is currently a law in place that allows providers to scan your messages. This is optional, so they are not forced to do so. It is worth noting that only a few unencrypted communication providers currently engage in this type of scanning, including Skype, Snapchat, Gmail, Facebook and Instagram Messenger, iCloud email and Xbox. Even end-to-end encrypted messaging apps would not be excluded from chat control, which could potentially undermine the entire point of it. The EU Commission also plans to include mandatory age verification, which would make anonymity harder to achieve
 
-# How could (or will) chat control affect individuals?
+## How could (or will) chat control affect individuals?
 
 Chat control would allow your chats to be scanned, which could lead to you being falsely reported, because according to Swiss federal police authorities 80% of automatically generated reports are false.
 
@@ -29,7 +29,7 @@ Chat control would not affect criminals, _at all_. They would just use an illega
 
 Secure communication protects groups, that are frequently attacked, such as activists, LGBTQ+, politicians and journalists. Without the protection of secure communication chat control could be abused to cause further damage to these minorities.
 
-# What _should_ be done about illegal material?
+## What _should_ be done about illegal material?
 
 - Easily available call centers for support, so children can contact them without fear.
 - Functionality in online services, such as chat apps, that allows users to report messages or other media.

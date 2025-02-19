@@ -11,7 +11,7 @@ tags:
 
 Hosting a Minecraft server is relatively easy compared to other services, but running it through Docker makes it so much more easy to use and portable. This is a complete guide on how to run a Minecraft server.
 
-# Docker
+## Docker
 
 First, we are going to install [Docker](https://www.docker.com/). _Do not_ install Docker desktop, as it's not really part of the docker open source community and we wouldn't want to deal with it. Here I assume you're using a Linux distribution, though the process should be similar for Windows users. Select your platform on [this](https://docs.docker.com/engine/install/) page. I use Ubuntu, so I'm going to follow the install guide for it.
 
@@ -19,7 +19,7 @@ After you have added Docker's apt repository and installed its packages, make su
 
 Now we have Docker fully set up for our needs, time to move on to the next part.
 
-# Networking
+## Networking
 
 Because you probably want to be able to access your Minecraft server from outside your network, you should forward for the port 25565, which is the default port for Minecraft. You can skip this part if you host your Minecraft server on a network where all the ports are opened (commonly seen in VPSs and other servers in datacenters, rarely in home connections)
 
@@ -31,7 +31,7 @@ Another thing you have to do to allow people to connect to your server is that y
 
 For accessing Minecraft via a local network, you have to find your private IP address. On Linux you can do that by typing `ip a` into your terminal, and it will output the local IP address in the block that is _not_ `lo`, because that's the loopback address. And finally, you can access your Minecraft server locally (on the computer running it) by simply typing `localhost` into the server address field in the game.
 
-# Starting the Server
+## Starting the Server
 
 I recommend you put each service you host into its own directory, such as `~/mc` for Minecraft, so that you can have a separate docker compose file for each service. Here is my docker-compose.yml:
 
@@ -54,7 +54,7 @@ volumes:
 
 To run it, you can simply use the command `docker compose up -d` (the -d flag makes it run as a background service) while inside the directory you put docker-compose.yml in. It will automatically download all the required files for thes server and start it. To check the logs you can run `docker compose logs -f`.
 
-# Server Administration
+## Server Administration
 
 You might need to log into the admin console sometimes, for example if you'd like to whitelist someone buy you don't want to start Minecraft. What you can do is use rcon-cli, a tool that comes with the minecraft docker container that allows you to do just that - log into the server console. To run it, go to the folder you have the docker compose file in and use the command `docker compose exec -i mc rcon-cli` (mc is the service's name).
 
