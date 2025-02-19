@@ -62,6 +62,6 @@ Minecraft's `server.properties` file can be found in the data folder. In the fil
 
 I highly recommend upgrading the docker container from time to time to get the latest security patches and Minecraft versions. You can upgrade the host machine (Ubuntu in my case) by running `sudo apt update && sudo apt dist-upgrade` or your distribution's equivalent. As for Minecraft you can go to the directory you have it in and run `docker compose pull && docker compose up -d`
 
-# Final Thoughts
+## Final Thoughts
 
 Overall, I think docker and docker compose make running and admining a Minecraft server a lot easier, and it allows you to very easily move your server from one device to another without having to deal with the OS running on it.

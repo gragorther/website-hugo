@@ -6,10 +6,11 @@ categories:
   - personal
 ---
 
- 
+## Other websites
+
 - [Tsugu](https://tsugu.xyz)
 A website of a guy I know online. He mostly writes about tech.
-- [Iconipup](https://iconipup.neocities.org/)
+- [Iconipup](https://iconipup.neocities.org/) Someone I met online, notably she made the profile picture I use on my site.
 - [Alan Pope's Blog](https://popey.com/blog/)
 The blog of a prolific member of the Ubuntu community. He used to be the spokesperson for Canonical, convincing devs to publish apps on [snap](https://snapcraft.io/).
 - [Landchad](https://landchad.net/)
