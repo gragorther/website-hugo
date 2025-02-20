@@ -20,7 +20,7 @@ style = "github-dark"
   author = "Gregor Podjed"
   info = ["Web Developer", "FOSS Enthusiast", "Sysadmin", "Linux Nerd"]
   description = "My personal website"
-  keywords = "blog,developer,personal,webdev"
+  keywords = "blog,developer,personal,webdev,linux,minecraft,tech"
   avatarurl = "/static/kitty.jpg"
   #gravatar = "john.doe@example.com"
 
@@ -34,11 +34,13 @@ style = "github-dark"
 
   colorScheme = "auto"
   hidecolorschemetoggle = false
-  license="CC BY-SA 4.0"
+  license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 
   # customCSS = ["css/custom.css"]
   # customSCSS = ["scss/custom.scss"]
   # customJS = ["js/custom.js"]
+  [params.cloudflare]
+  token = "da2d87dd1ffe4ec59123dac1c64cc235"
 
 [taxonomies]
   category = "categories"
