@@ -77,3 +77,7 @@ type = "application/rss+xml"
   name = "About"
   weight = 2
   url = "about/"
+[[menu.main]]
+name = "Contact me"
+weight = "3"
+url = "contact/"
