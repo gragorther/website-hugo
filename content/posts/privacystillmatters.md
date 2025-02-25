@@ -1,6 +1,6 @@
 ---
 title: Why Privacy Still Matters in the Digital Age
-date: "2025-02-24"
+date: "2025-02-25"
 categories:
   - tech
 tags:
