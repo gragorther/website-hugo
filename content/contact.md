@@ -11,4 +11,4 @@ Here are the ways you can contact me, don't hesitate to do so even if it's a ver
 - Matrix: [@gregor:gregtech.eu](https://matrix.to/#/@gregor:gregtech.eu) (preferred, though using any other method is acceptable)
 - E-mail: [gregor@gregtech.eu](mailto:gregor@gregtech.eu)
 - Threema: [6CH24JJE](https://threema.id/6CH24JJE)
-- Signal: [gregortac.96](https://signal.me/#eu/KoGUMgjCpJIoGuuO16hOBOTEFUfyhq8pA9kBtm_szv9pFJs6A9xGvpL9cYsPAG-b)
+- Signal: [tactac.15](https://signal.me/#eu/FxSn7JXnPwqdwATIPPIUuNcijo0Q-y0Ut83D_3OIeA8HuQLZBWpNQKup8CYSsZ0a)
