@@ -20,11 +20,11 @@ style = "github-dark"
   author = "Gregor Podjed"
   info = ["Web Developer", "FOSS Enthusiast", "Sysadmin", "Linux Nerd"]
   description = "My personal website"
-  keywords = "blog,developer,personal,webdev,linux,minecraft,tech"
-  avatarurl = "/static/kitty.jpg"
+  keywords = "blog,developer,personal,webdev,linux,minecraft,tech,privacy,anonymity,dev"
+  avatarurl = "/static/kitty.webp"
   #gravatar = "john.doe@example.com"
 
-  faviconSVG = "/static/kitty.jpg"
+  faviconSVG = "/static/kitty.webp"
   #favicon_32 = "/img/favicon-32x32.png"
   #favicon_16 = "/img/favicon-16x16.png"
 
