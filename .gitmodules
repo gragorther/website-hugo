@@ -9,4 +9,4 @@
 	url = https://github.com/luizdepra/hugo-coder.git
 [submodule "themes/not-much"]
 	path = themes/not-much
-	url = https://github.com/imgios/not-much.git
+	url = https://github.com/gragorther/not-much.git
