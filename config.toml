@@ -36,14 +36,8 @@ showThemeNotice = true
     title = "posts"
     url = "/posts"
     weight = 2
-  
+    
   [[menu.main]]
-    identifier = "about"
-    name = "about"
-    title = "About"
-    url = "/about"
-    weight = 3
-    [[menu.main]]
     identifier = "contact"
     name = "contact"
     title = "Contact"
