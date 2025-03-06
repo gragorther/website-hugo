@@ -1,0 +1,51 @@
+# The following line is needed
+# when running the example site
+# from a subdir of the theme+
+
+title = "GregTech"
+theme = "not-much"
+languageCode = "en-us"
+baseURL = "https://blog.gregtech.eu"
+copyright = "Sample custom notice © {year}"
+
+[markup]
+  [markup.highlight]
+    style = 'dracula'
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+
+[params]
+theme = "dark"
+palette = "catpuccin"
+showThemeNotice = true
+
+# Navigation
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "home"
+    title = "Home"
+    url = "/"
+    weight = 1
+  
+  [[menu.main]]
+    identifier = "posts"
+    name = "posts"
+    title = "posts"
+    url = "/posts"
+    weight = 2
+  
+  [[menu.main]]
+    identifier = "about"
+    name = "about"
+    title = "About"
+    url = "/about"
+    weight = 3
+    [[menu.main]]
+    identifier = "contact"
+    name = "contact"
+    title = "Contact"
+    url = "/contact"
+    weight = 4
