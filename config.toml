@@ -6,7 +6,7 @@ title = "GregTech"
 theme = "not-much"
 languageCode = "en-us"
 baseURL = "https://blog.gregtech.eu"
-copyright = "Sample custom notice © {year}"
+copyright = "Content licensed under CC BY-SA 4.0"
 
 [markup]
   [markup.highlight]
