@@ -1,11 +1,11 @@
 ---
 title: Immutable Linux Distributions
 date: "2024-08-05"
-categories:
-  - tech
+summary: The pros and cons of immutable Linux distributions
 tags:
   - linux
   - distros
+  - tech
 ---
 
 ## What are immutable distros?

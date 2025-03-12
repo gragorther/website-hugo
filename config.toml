@@ -20,6 +20,7 @@ copyright = "Content licensed under CC BY-SA 4.0"
 theme = "dark"
 palette = "catpuccin"
 showThemeNotice = true
+showPostsSummary = true
 
 # Navigation
 [menu]

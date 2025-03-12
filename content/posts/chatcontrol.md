@@ -1,12 +1,12 @@
 ---
 title: Chat Control, the Privacy Nightmare That Keeps Coming Back
 date: "2024-07-05"
-categories:
-  - tech
 tags:
+  - tech
   - privacy
   - EU
   - chat control
+summary: Why chat control is a bad idea and only harms non-criminals
 ---
 
 I am a 13-year-old student from Slovenia. I care about privacy and my future as an EU citizen, and currently the future is looking bleak. Wars, even more wars, homelessness, late stage capitalism and privacy nightmares.

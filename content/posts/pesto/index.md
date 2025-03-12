@@ -1,10 +1,9 @@
 ---
 title: Pesto a la Pedro
-description: Learn how to prepare a simple but delicious dish with pesto.
+summary: Learn how to prepare a simple but delicious dish with pesto.
 date: "2025-01-26"
-categories:
-  - cooking
 tags:
+  - cooking
   - pesto
   - garlic
 ---

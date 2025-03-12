@@ -1,9 +1,10 @@
 ---
 title: Hall of Fame
 date: "2025-02-07"
-categories:
+tags:
   - videogames
   - personal
+summary: A list of my interests
 ---
 
 ## Other websites

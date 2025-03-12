@@ -1,13 +1,13 @@
 ---
 title: Why Privacy Still Matters in the Digital Age
 date: "2025-02-25"
-categories:
-  - tech
 tags:
+  - tech
   - privacy
   - internet
   - anonymity
   - data
+summary: How data collected from you is used to destroy democracies and support wars
 ---
 
 People are becoming more and more apathetic to how their data is being collected and used, and I find that disturbing. With every addition to the tracking and sale of their data they act like it doesn't matter; "what would they use my data for?"

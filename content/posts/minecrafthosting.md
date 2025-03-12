@@ -1,12 +1,12 @@
 ---
 title: Hosting a Minecraft server with Docker
 date: "2025-01-19"
-categories:
-  - tech
 tags:
+  - tech
   - docker
   - minecraft
   - videogames
+summary: A guide on how to host a Minecraft server with Docker and Docker Compose
 ---
 
 Hosting a Minecraft server is relatively easy compared to other services, but running it through Docker makes it so much more easy to use and portable. This is a complete guide on how to run a Minecraft server.
