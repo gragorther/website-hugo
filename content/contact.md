@@ -1,10 +1,9 @@
-+++
-title = "Contact me"
-description = "Ways to contact me"
-date = "2025-02-20"
-aliases = ["contact-gregtech", "contact-me"]
-author = "Gregor Podjed"
-+++
+---
+title: Contact me
+description: Ways to contact me
+date: 2025-02-20
+toc: false
+---
 
 Here are the ways you can contact me, don't hesitate to do so even if it's a very silly request, like telling me about a typo, how I could word stuff better, inaccuracies, or general questions about me!
 
